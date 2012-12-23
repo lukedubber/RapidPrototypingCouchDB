@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="http://code.jquery.com/ui/1.10.0-beta.1/themes/base/jquery-ui.css" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<p>Click the button bellow to setup the example.</p>
+		<div id="divInfo"></div> <br />
+		<div id="divExample1">
+			<button id="btnExample1Setup">Setup example 1</button>
+		</div>
+		<div id="divExample2">
+			<button id="btnExample2Setup">Setup example 2</button>
+		</div>
+		<div id="divExample3">
+			<button id="btnExample3Setup">Setup example 3</button>
+		</div>
+		<div id="divExample4">
+			<button id="btnExample4Setup">Setup example 4</button>
+		</div>
+		<div id="divExample5">
+			<button id="btnExample5Setup">Setup example 5</button>
+		</div>
+	</div>
+	<div id="test">
+	<textarea rows="30" cols="200" id="outLog"></textarea>
+	<p>Test</p></div>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0-beta.1/jquery-ui.min.js"></script>
+    <script src="http://localhost:5984/_utils/script/jquery.couch.js"></script>
+    <script src="globals.js"></script>
+    <script>
+    	//$("#test").dialog();
+    	
+    	$.couch.info({
+		    success: function(data) {
+		        console.log(data);
+		        $("#divInfo").append("CouchDB Version: "+data.version+"<br /><br />");
+		        //$("#outLog").val(data);
+		    },
+		    error: function(data){
+		    	console.log("Error! CouchDB not found! If you have installed CouchDB then check globals.js to see if its the right urlPrefix")
+		    	$("#divInfo").append("Error! CouchDB not found! If you have installed CouchDB then check globals.js to see if its the right urlPrefix");
+		    			
+		    	//alert(data);
+		    }
+		});
+    	
+    	$.couch.allDbs({
+    	    success: function(data) {
+    	        console.log(data);
+    	        $("#divInfo").append("Databases: <br />");
+    	        $(data).each(function(key,obj){
+    	        	$("#divInfo").append(obj+"<br />");
+    	        });
+    	        //$("#divInfo").append(data[0]);
+    	        databases = data;
+    	    }
+    	});
+
+		$("#btnExample1Setup").click(function(){
+	    	$.couch.db("example1").create({
+	    		success:function(data){
+	    			console.log(data);
+	    		}
+	    	});
+		});
+		
+		$("#btnExample2Setup").click(function(){
+	    	$.couch.db("example2").create({
+	    		success:function(data){
+	    			console.log(data);
+	    		}
+	    	});
+		});
+		
+		$("#btnExample3Setup").click(function(){
+	    	$.couch.db("example3").create({
+	    		success:function(data){
+	    			console.log(data);
+	    		}
+	    	});
+		});
+		
+		$("#btnExample4Setup").click(function(){
+	    	$.couch.db("example4").create({
+	    		success:function(data){
+	    			console.log(data);
+	    		}
+	    	});
+		});
+		
+		$("#btnExample5Setup").click(function(){
+	    	$.couch.db("example5").create({
+	    		success:function(data){
+	    			console.log(data);
+	    		}
+	    	});
+		});		
+    	
+    	
+    
+    </script>
+</body>
+</html>

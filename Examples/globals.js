@@ -1,0 +1,1 @@
+$.couch.urlPrefix = "http://localahost/db"; //Change this to your site if you want. The default is "localhost:5984" 
