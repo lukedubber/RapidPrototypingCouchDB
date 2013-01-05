@@ -9,7 +9,7 @@ If you have not seen the video or looked at he presentation it can be found here
 
 [Presentation (place holder)](http://example.com)
 
-[Video (place holder](http://example.com)
+[Presentation Video (place holder)](http://example.com)
 
 Goal
 --------
