@@ -7,7 +7,7 @@ Document a work in progress!
 This repository contains the examples I used during my presentation on using CouchDB as a backend for rapid prototyping.
 If you have not seen the video or looked at he presentation it can be found here.
 
-[Presentation (place holder)](http://example.com)
+[Presentation](https://docs.google.com/presentation/d/15rho3JF3eujxwVIvQ5LvG7beqw4Q7pQzwYMzTWkXa2A/pub?start=false&loop=false&delayms=3000)
 
 [Presentation Video (place holder)](http://example.com)
 
